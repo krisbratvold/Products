@@ -1,0 +1,17 @@
+@model Association
+<div class="right">
+        <p>Add Category:</p>
+        <form asp-action="RelateCategory" asp-route-productId="@Model.ProductId">
+            <div class="form-group">
+                <select asp-for="CatagoryId">
+                    @{
+                        foreach (var category in ViewBag.ProductCategories)
+                        {
+                            <option value="@category.CatagoryId">@category.Name</option>
+                        }
+                    }
+                </select>
+            </div>
+            <button class="btn btn-primary">Add</button>
+        </form>
+    </div>
